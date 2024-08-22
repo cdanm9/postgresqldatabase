@@ -1,0 +1,51 @@
+{
+  "name": "postgresqldatabase",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/postgres": "^1.10.0",
+    "@sap/cds": "^8",
+    "@sap/xssec": "^4.2.1",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.6",
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^8"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "[pg]": {
+        "db": {
+          "kind": "postgres",
+          "impl": "@cap-js/postgres",
+          "credentials": {
+            "host": "localhost",
+            "port": 5432,
+            "database": "newpostgres",
+            "user": "postgres",
+            "password": "postgres"
+          }
+        }
+      },
+      "db": {
+        "kind": "postgres",
+        "impl": "@cap-js/postgres",
+        "credentials": {
+          "host": "localhost",
+          "port": 5432,
+          "database": "newpostgres",
+          "user": "postgres",
+          "password": "postgres"
+        }
+      },
+      "auth": "mocked"
+    }
+  }
+}
